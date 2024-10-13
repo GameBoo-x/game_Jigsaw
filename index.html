@@ -1,1 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="SgT4PAGADooer2kIL_VItepZXIvIqUBTNGJVRuF8Cz0" />
+    <link rel="icon" type="image/png" href="/Logo.png" />
+    <title> Jigsaw's Game </title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <!-- استدعاء ملفات CSS المشتركة -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="puzzle.css">
+    <!-- استدعاء مكتبة Telegram -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <!-- Splash Screen -->
+    <div class="splash-screen">
+        <div class="loading-text"></div>
+    </div>
+    
+    <!-- Main Container -->
+    <div class="container" style="display: none;">
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <div id="balanceContainer" class="balance-container">
+                <div id="userLevel" class="user-level">
+                    Level: <span id="currentLevelName"></span>
+                </div>
+                <button id="levelFloatingBtn" class="level-button-floating">🏅</button>
+            </div>
+        </div>
+
+        <!-- المحتوى الديناميكي سيتم تحميله هنا -->
+        <div id="mainContent">
+            <!-- Main Page -->
+            <div id="mainPage" class="screen-content active">
+                <main class="main-content">
+                    <div id="balanceTitle"> Coins Balance: </div>
+                    <div id="balanceAmount">0</div>
+                    <div class="clickable-image">
+                        <img id="clickableImg" src="i/coinsaw.png" alt="Clickable Image">
+                    </div>
+                    <div class="energy-bar-container">
+                        <div id="energyInfo">10,000/10,000 <span class="icon-energy">⚡</span></div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-inner" id="energyBar"></div>
+                        </div>
+                        <span id="energyText"></span>
+                    </div>
+                    <button data-target="boostsPage" class="boosts-button">
+                        <img src="i/boosts.png" alt="Boosts"> Boost
+                    </button>
+                </main>
+            </div>
+
+                    <!-- Notifications -->
+                   <div id="copyInviteNotification" class="notification top-notification">Invite link copied!</div>
+                   <div id="purchaseNotification" class="notification top-notification"></div>
+
+                   <!-- Bottom Sheet Modal -->
+                   <div id="upgradeConfirmation" class="confirmation-modal" style="display: none;">
+                   <span id="closeModal" class="close">&times;</span> <!-- زر الإغلاق -->
+                   <div class="modal-image">
+                   <img src="i/Boosts3.png" alt="Centered Image"> <!-- صورة في المنتصف -->
+                 </div>
+                 <p id="upgradeText">"Are you sure you want to upgrade? Please note that the upgrade cost will be deducted from your coins.</p>
+                 <div class="confirmation-buttons">
+                 <button id="confirmUpgradeBtn" class="game-button">Upgrade</button>
+                 <button id="cancelUpgradeBtn" class="game-button">Close</button>
+            </div>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <nav class="menu">
+            <button data-target="tasksPage">
+                <img src="i/tasks.png" alt="Tasks"> Tasks
+            </button>
+            <button data-target="Puzzlespage">
+                <img src="i/key1.png" alt="Puzzles"> Puzzle
+            </button>
+            <button data-target="mainPage">
+                <img src="i/Home.png" alt="Play"> Main
+            </button>
+            <button data-target="accountPage">
+                <img src="i/person.webp" alt="Account"> Friends
+            </button>
+            <button data-target="walletPage">
+                <img src="i/wallet.png" alt="Wallet"> Wallet
+            </button>
+        </nav>
+    </div>
+
+    <!-- استدعاء ملفات JavaScript -->
+    <script type="module" src="tasks.js"></script>
+    <script type="module" src="puzzle.js"></script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
 
